@@ -5,11 +5,14 @@ Version 0.1
 -X- Ask for an amino acid sequence in 1 letter format.
 - - Show the information and finish the program.
 
-- - Make a structure to host each amino acid information. 
-- - Name of the amino acid.
-- - Molecular weight.
-- - Three letter name.
-- - One letter name.
+-X- Make a structure to host each amino acid information. 
+-X- Name of the amino acid.
+-X- Molecular weight.
+-X- Three letter name.
+-X- One letter name.
+
+-X- Added developer argument for extra functions.
+- - Add a function for adding aminoacids.
 
 - - Save all amino acid data into a file.
 - - Load amino acid information at the beginning of the program.
@@ -22,3 +25,14 @@ Version 0.1
 Version 0.2
 - - Check there are no strange or non codified letters.
 - - Save an history of inputed sequences.
+- - Calculate de extinction coeficient of the sequence.
+        The extinction coeficient is calculated based in the sum of the amino acids
+        that contribute to the absorbance at 280 nm. The exctinction coeficient for this pure amino acids
+        is calculated using the Lamber-Beer formula. The extinction coefficient of this amino acids are:
+        - Tryptophan: 5500 M-1*cm-1.
+        - Tyrosin: 1490 M-1*cm-1.
+        - Cisteine: 125 M-1*cm-1 (Just if there are disulfure bonds).
+
+        The extinction coeficient for a protein uses the next sum:
+        epsilon_280nm = (nTrp * 5500) + (nTyr * 1490) + (nCys * 125)
+        

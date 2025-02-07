@@ -1,38 +1,24 @@
-#include <iostream>
+#include "Suportlib.h"
 #include <string>
-#include <fstream>
-
-struct AminoAcid {
-    std::string name;
-    float molecularWeight;
-    std::string threeLetters;
-    char oneLetter;
-};
+#include <iostream>
 
 AminoAcid newAminoAcid();
 
 int main(int argc, char *argv[]) {
-    AminoAcid aas[23];
-    int aasCount = 0;
+    if (argc == 2) {
+        developerMenu(argv[1]);
+    } else {
 
-    std::string inputSequence = "";
+        std::string inputSequence = "";
 
-    std::cout << "Enter the protein sequence 1 amino acid letter." << std::endl;
-    std::cout << "Sequence: ";
-    std::cin >> inputSequence;
+        std::cout << "Enter the protein sequence 1 amino acid letter." << std::endl;
+        std::cout << "Sequence: ";
+        std::cin >> inputSequence;
 
-    std::cout << inputSequence << std::endl;
-
-    if (*argv[1] == 'D') {
-
-        aas[aasCount] = newAminoAcid();
-        aasCount++;
-
-        std::cout << aas[0].name << std::endl;
-
+        std::cout << inputSequence << std::endl;
     }
 
-    return 1;
+    return 0;
 }
 
 AminoAcid newAminoAcid() {
